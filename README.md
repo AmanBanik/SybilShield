@@ -16,7 +16,12 @@
 
 > **"Traditional fraud systems flag isolated transactions. SybilShield dismantles the organized topologies behind them."**
 
-[Key Features](#-key-features) • [Why GraphBLAS?](#-the-problem-why-relational--vector-dbs-fail) • [Architecture](#-architecture) • [10 Scenarios](#-the-10-forensic-scenarios) • [Quickstart](#-quickstart-guide) • [Claude Desktop MCP](#-claude-desktop-mcp-integration)
+### 🌐 Live Production Deployments
+* 🖥️ **Live Web Dashboard:** **[https://sybilshield-production.up.railway.app](https://sybilshield-production.up.railway.app)**
+* ⚡ **Live Remote FastMCP SSE Server:** **`https://sybilshield-production-fb62.up.railway.app/sse`**
+
+[Live Dashboard](https://sybilshield-production.up.railway.app) • [Live FastMCP SSE](https://sybilshield-production-fb62.up.railway.app/sse) • [Why GraphBLAS?](#-the-problem-why-relational--vector-dbs-fail) • [Architecture](#-architecture--investigation-flow) • [10 Scenarios](#-the-10-forensic-scenarios) • [Quickstart](#-quickstart-guide) • [Claude Desktop MCP](#-claude-desktop-mcp-integration)
+
 
 </div>
 
@@ -304,8 +309,22 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 Connect SybilShield directly to **Claude Desktop** to perform autonomous investigations using natural language.
 
-### Configuration
-Open `%APPDATA%\Claude\claude_desktop_config.json` (Windows) or `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) and add:
+### Option A: Remote Cloud MCP (Zero Setup, Zero Docker, Zero Passwords)
+Anyone can connect Claude Desktop to SybilShield immediately via our live Railway SSE endpoint:
+
+```json
+{
+  "mcpServers": {
+    "sybilshield": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://sybilshield-production-fb62.up.railway.app/sse"]
+    }
+  }
+}
+```
+
+### Option B: Local Development (Self-Hosted Python / Local Docker)
+For developers running the codebase locally against `localhost:6379`:
 
 ```json
 {
@@ -324,6 +343,7 @@ Open `%APPDATA%\Claude\claude_desktop_config.json` (Windows) or `~/Library/Appli
   }
 }
 ```
+
 
 ### Ready-to-Test Prompts for Claude:
 
