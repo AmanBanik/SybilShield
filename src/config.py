@@ -19,7 +19,7 @@ class Settings(BaseModel):
     # MCP server configuration (stdio for local, sse for cloud)
     mcp_transport: str = os.getenv("MCP_TRANSPORT", "stdio")
     mcp_host: str = os.getenv("MCP_HOST", "0.0.0.0")
-    mcp_port: int = int(os.getenv("MCP_PORT", "8000"))
+    mcp_port: int = int(os.getenv("PORT", os.getenv("MCP_PORT", "8000")))
     mcp_server_name: str = "SybilShield-MCP"
     agent_id: str = "SybilShield-Agent-01"
 
