@@ -24,5 +24,6 @@ COPY . .
 # Expose Streamlit UI (:8501) and FastMCP SSE (:8000)
 EXPOSE 8501 8000
 
-# Default entrypoint runs Streamlit dashboard in headless mode
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
+# Default entrypoint runs Streamlit dashboard in headless mode with dynamic port for Railway / Cloud
+CMD ["sh", "-c", "streamlit run app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false"]
+
