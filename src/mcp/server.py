@@ -108,6 +108,16 @@ def investigate_natural_language_prompt(prompt: str) -> Dict[str, Any]:
 
 if __name__ == "__main__":
     import argparse
+    import re
+
+    def robust_port(val):
+        if isinstance(val, int):
+            return val
+        digits = re.findall(r'\d+', str(val))
+        if digits:
+            return int(digits[0])
+        return settings.mcp_port
+
     parser = argparse.ArgumentParser(description="SybilShield FastMCP Server")
     parser.add_argument(
         "--transport", "-t",
@@ -117,7 +127,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--port", "-p",
-        type=int,
+        type=robust_port,
         default=settings.mcp_port,
         help="Port for SSE transport (default: 8000)"
     )
