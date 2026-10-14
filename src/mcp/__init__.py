@@ -1,3 +1,3 @@
-from .server import mcp
+# SybilShield MCP Package
+__all__ = ["server"]
 
-__all__ = ["mcp"]
