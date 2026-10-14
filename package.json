@@ -1,0 +1,19 @@
+{
+  "name": "sybilshield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@falkordb/mcpserver": "^1.3.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "dotenv": "^18.0.7",
+    "falkordb": "^6.8.0"
+  }
+}

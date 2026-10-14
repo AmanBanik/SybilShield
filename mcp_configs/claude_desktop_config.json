@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "sybilshield": {
+      "command": "C:\\Devfield\\devhack\\SybilShield\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "src.mcp.server"
+      ],
+      "cwd": "C:\\Devfield\\devhack\\SybilShield",
+      "env": {
+        "FALKORDB_HOST": "localhost",
+        "FALKORDB_PORT": "6379",
+        "FALKORDB_GRAPH": "sybil_shield_demo"
+      }
+    }
+  }
+}
