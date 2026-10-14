@@ -155,7 +155,12 @@ def render_graph_canvas():
 # Sidebar Controls & 10 Scenario Selector
 # ------------------------------------------------------------------------------
 with st.sidebar:
-    st.image("https://raw.githubusercontent.com/FalkorDB/FalkorDB/main/docs/images/falkordb-logo-color.svg", width=180)
+    import os
+    logo_path = "assets/falkordb_logo.svg"
+    if os.path.exists(logo_path):
+        st.image(logo_path, width=180)
+    else:
+        st.markdown("### ⚡ **FalkorDB**")
     st.markdown("### 🛡️ SybilShield Command Center")
     st.caption("Track 01: Agents That Act on Connected Data")
 
