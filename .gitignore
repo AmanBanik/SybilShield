@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# Internal agent templates
+.agents/
+

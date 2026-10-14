@@ -1,0 +1,21 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: sybilshield-falkordb
+    restart: unless-stopped
+    ports:
+      - "6379:6379"   # FalkorDB Redis Protocol Port
+      - "3000:3000"   # FalkorDB Browser Web UI
+    volumes:
+      - falkordb_data:/data
+    environment:
+      - FALKORDB_ARGS=--save 60 1
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  falkordb_data:
+    name: sybilshield_falkordb_data
