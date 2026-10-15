@@ -7,6 +7,7 @@
 
 [![FalkorDB](https://img.shields.io/badge/FalkorDB-GraphBLAS-red?style=for-the-badge&logo=redis)](https://falkordb.com)
 [![Model Context Protocol](https://img.shields.io/badge/MCP-FastMCP-purple?style=for-the-badge)](https://modelcontextprotocol.io)
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Video_Demo-FF0000?style=for-the-badge&logo=youtube)](https://youtu.be/AGz4LOvmB8o)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit)](https://streamlit.io)
 [![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)](https://python.org)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)](https://docker.com)
@@ -16,12 +17,26 @@
 
 > **"Traditional fraud systems flag isolated transactions. SybilShield dismantles the organized topologies behind them."**
 
-### 🌐 Live Production Deployments
+### 🌐 Live Production Deployments & Video Demo
+* 🎥 **Official Video Demo (3 min):** **[https://youtu.be/AGz4LOvmB8o](https://youtu.be/AGz4LOvmB8o)**
 * 🖥️ **Live Web Dashboard:** **[https://sybilshield-production.up.railway.app](https://sybilshield-production.up.railway.app)**
 * ⚡ **Live Remote FastMCP SSE Server:** **`https://sybilshield-production-fb62.up.railway.app/sse`**
 
-[Live Dashboard](https://sybilshield-production.up.railway.app) • [Live FastMCP SSE](https://sybilshield-production-fb62.up.railway.app/sse) • [Why GraphBLAS?](#-the-problem-why-relational--vector-dbs-fail) • [Architecture](#-architecture--investigation-flow) • [10 Scenarios](#-the-10-forensic-scenarios) • [Scenario Walkthrough (WALKTHROUGH.md)](WALKTHROUGH.md) • [Quickstart](#-quickstart-guide) • [Claude Desktop MCP](#-claude-desktop-mcp-integration)
+[🎥 Video Demo](https://youtu.be/AGz4LOvmB8o) • [Live Dashboard](https://sybilshield-production.up.railway.app) • [Live FastMCP SSE](https://sybilshield-production-fb62.up.railway.app/sse) • [Why GraphBLAS?](#-the-problem-why-relational--vector-dbs-fail) • [Architecture](#-architecture--investigation-flow) • [10 Scenarios](#-the-10-forensic-scenarios) • [Scenario Walkthrough (WALKTHROUGH.md)](WALKTHROUGH.md) • [Quickstart](#-quickstart-guide) • [Claude Desktop MCP](#-claude-desktop-mcp-integration)
 
+</div>
+
+---
+
+## 🎬 Video Demonstration
+
+<div align="center">
+
+[![SybilShield Video Demo](assets/thumbnail.png)](https://youtu.be/AGz4LOvmB8o)
+
+### [▶️ Click to Watch the Official 3-Minute Demo on YouTube](https://youtu.be/AGz4LOvmB8o)
+
+*Demonstrating autonomous multi-hop circular disruption, zero-install Claude Desktop FastMCP execution, and zero-false-positive family account protection.*
 
 </div>
 

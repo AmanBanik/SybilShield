@@ -6,6 +6,8 @@
 
 **SybilShield** is an autonomous financial crime and Sybil network disruption agent built for **Graph Hacks: Context for AI Agents** (Track 01: *Agents That Act on Connected Data*), powered by **FalkorDB** and the **Model Context Protocol (MCP)**.
 
+> 🎥 **Official Video Demonstration:** [Watch the 3-Minute Walkthrough on YouTube (https://youtu.be/AGz4LOvmB8o)](https://youtu.be/AGz4LOvmB8o)
+
 ### Why Relational DBs and Vector DBs Fail:
 * **Relational Databases (SQL):** Struggle with recursive multi-hop joins. Tracing an arbitrary $N$-hop money laundering loop or co-located device ring requires recursive CTEs that degrade exponentially under production loads.
 * **Vector Databases (Embeddings):** Capture semantic similarities between strings or text embeddings, but are completely **topology-blind**. A vector index cannot detect a directed cycle ($A \to B \to C \to D \to A$), nor can it compute betweenness centrality or identify shared hardware chokepoints.
