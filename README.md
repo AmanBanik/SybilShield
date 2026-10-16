@@ -289,7 +289,7 @@ SybilShield provides identical graph reasoning across **all four client platform
 
 ### 2. Clone & Setup
 ```bash
-git clone https://github.com/<your-username>/SybilShield.git
+git clone https://github.com/AmanBanik/SybilShield.git
 cd SybilShield
 
 # Create and activate virtual environment
