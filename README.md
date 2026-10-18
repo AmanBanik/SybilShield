@@ -157,6 +157,50 @@ erDiagram
     }
 ```
 
+### 🗺️ Graph Topology & Agent Query Map
+
+The following diagram maps the FalkorDB nodes, their relationships, and how the autonomous AI agent queries and mutates them via FastMCP tools:
+
+```mermaid
+flowchart TB
+    subgraph AgentLayer ["🤖 Autonomous AI Agent (Claude Desktop / FastMCP Tools)"]
+        direction LR
+        A1["investigate_account"]
+        A2["check_sybil_ring"]
+        A3["trace_money_trail"]
+        A4["execute_mitigation"]
+    end
+
+    subgraph FalkorGraph ["🐉 FalkorDB Graph Topology"]
+        direction TB
+        subgraph Nodes ["Graph Nodes (Entities)"]
+            ACC1["Account (Target)<br/>• id, status, risk_score"]
+            ACC2["Account (Accomplice / Mule)<br/>• id, status, risk_score"]
+            DEV["DeviceFingerprint<br/>• device_id, is_emulator"]
+            IP["IPAddress<br/>• ip, isp, is_vpn"]
+            CARD["PaymentCard<br/>• card_hash, issuer"]
+            AUDIT["AgentAudit<br/>• action, reason, timestamp"]
+        end
+
+        %% Graph Relationships
+        ACC1 -- "USED_DEVICE" --> DEV
+        ACC1 -- "USED_IP" --> IP
+        ACC1 -- "SHARES_CARD" --> CARD
+        ACC2 -- "USED_DEVICE" --> DEV
+        ACC2 -- "USED_IP" --> IP
+        ACC2 -- "SHARES_CARD" --> CARD
+        ACC1 -- "TRANSFERRED ($amount)" --> ACC2
+        ACC2 -- "TRANSFERRED (circular loop)" --> ACC1
+        ACC1 -- "MITIGATED_BY" --> AUDIT
+    end
+
+    %% How Agent Queries Them
+    A1 -. "1. Queries 1-hop device & IP vectors" .-> ACC1
+    A2 -. "2. Traverses shared hardware & card vectors" .-> DEV
+    A3 -. "3. Traverses multi-hop loops & sinks" .-> ACC2
+    A4 -. "4. Mutates status to FROZEN & writes audit trail" .-> AUDIT
+```
+
 ---
 
 ## ⚡ Core Cypher Queries & GraphBLAS Algorithms
